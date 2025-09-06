@@ -85,6 +85,71 @@
     border: 1px solid rgba(184, 144, 32, 0.2);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
+
+  /* Ensure mobile menu button is always visible */
+  .lg\:hidden {
+    display: block !important;
+  }
+
+  /* Fix mobile viewport issues */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Improve mobile header spacing */
+  header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Better mobile logo scaling */
+  header img {
+    max-height: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    header img {
+      max-height: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    header img {
+      max-height: 3rem;
+    }
+  }
+}
+
+/* Additional mobile fixes */
+@media (max-width: 768px) {
+  /* Ensure full screen on mobile */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Fix mobile menu visibility */
+  .lg\:hidden {
+    display: block !important;
+  }
+
+  /* Improve mobile header */
+  header {
+    backdrop-filter: blur(10px);
+  }
+
+  /* Better mobile spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Mobile hero section adjustments */
+  section[class*="h-screen"] {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* Timeline specific RTL support */

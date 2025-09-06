@@ -13,7 +13,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url('/img/12.png')`,
       }}
@@ -22,7 +22,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-emdad-navy/90 via-emdad-navy/70 to-emdad-navy/90"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-10">
+      <div className="relative z-10 text-center max-w-3xl mx-auto px-4 sm:px-6 py-10 mt-16 sm:mt-0">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-emdad-gold via-yellow-400 to-emdad-gold bg-clip-text text-transparent animate-pulse arabic-text">
           {t('hero.title')}
         </h1>

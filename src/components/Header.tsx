@@ -67,6 +67,7 @@ export function Header() {
   };
 
   const navItems = [
+    { key: "nav.home", href: "" },
     { key: "nav.about", href: "about" },
     { key: "nav.quality", href: "quality" },
     { key: "nav.sustainability", href: "sustainability" },
@@ -101,10 +102,10 @@ export function Header() {
             <img
               src="/img/EMDAD just.png"
               alt="EMDAD Direct Logistics"
-              className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             />
             <span
-              className="text-2xl font-semibold text-emdad-gold italic tracking-wide hidden sm:inline"
+              className="text-lg sm:text-xl md:text-2xl font-semibold text-emdad-gold italic tracking-wide hidden sm:inline"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               {language === "ar" ? "إمداد مباشر" : "Emdad Mubasher"}
@@ -113,6 +114,18 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            {/* Home Link */}
+            <button
+              onClick={() => handleNavigation("")}
+              className={`relative text-white transition-colors duration-200
+                hover:text-emdad-gold after:content-[''] after:absolute after:w-0 after:h-[2px]
+                after:bg-gradient-to-r after:from-yellow-400 after:to-yellow-600
+                after:-bottom-1 hover:after:w-full after:transition-all after:duration-300
+                ${language === "ar" ? "after:right-0 ml-8" : "after:left-0"}`}
+            >
+              {t("nav.home")}
+            </button>
+
             {/* About Dropdown */}
             <div className={`relative group ${language === 'ar' ? 'ml-8' : ''}`}>
               <button
@@ -197,6 +210,12 @@ export function Header() {
         {isMobileMenuOpen && (
           <nav className="lg:hidden mt-4 pb-4 border-t border-gray-700 animate-slideDown bg-emdad-navy rounded-b-lg shadow-lg">
             <div className="flex flex-col space-y-4 pt-4 px-4">
+              <button
+                onClick={() => handleNavigation("")}
+                className="text-white hover:text-emdad-gold transition-colors duration-200 text-left"
+              >
+                {t("nav.home")}
+              </button>
               <button
                 onClick={() => handleNavigation("about")}
                 className="text-white hover:text-emdad-gold transition-colors duration-200 text-left"
